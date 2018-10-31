@@ -1,6 +1,10 @@
 #ifndef PID_H
 #define PID_H
 
+#include <iostream>
+#include <vector>
+#include <numeric>
+
 class PID {
 public:
   /*
@@ -16,6 +20,16 @@ public:
   double Kp;
   double Ki;
   double Kd;
+
+  std::vector<double> cte_record;
+  std::vector<double> cte_record_average;
+
+  double ave_error;
+  double best_error;
+
+  bool update_Kp_flag;
+  bool update_Ki_flag;
+  bool update_Kd_flag;
 
   /*
   * Constructor
