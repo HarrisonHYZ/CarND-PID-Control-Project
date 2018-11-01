@@ -1,0 +1,13 @@
+Discussion about the effect of P, I, D coefficients.
+Based on my understanding of the PID control algorithm, the PID is a easy control method to implement, but an very effective
+way. The meaning of P is proportional. It means if the error is bigger, the control value is larger. So the thing is under
+control can go to the right place faster. However, with the P control only, the overshoot is always there. Then we introduce D
+parameter to include the error changing rate. With P and D coefficients, we can overcome the overshoot. However, system has
+systematic bias. So we add I coefficience to overcome it.
+
+About how I chose the final hyperparameters, firstly, I know the I coefficience should be very small, because it affects the
+accumulated error. According to the parameters in the lesson, I know the D should be the largest one and P should be the value
+in middle. So I tried several groups of them. With twiddle fuction, I got a good combination of P, I, D. But I found the
+overshoot is big and sometimes the car will go out of the road. After analyzing the process, I realized that because the I
+value is too big. Then I make I to 0.0 at the beginning and I_error smaller than before, too. Finally, the car's behavior can
+be accepted.
