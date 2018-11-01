@@ -14,8 +14,8 @@ void PID::Init(double Kp, double Ki, double Kd) {
 	this->Kp = Kp;
   	this->Ki = Ki;
   	this->Kd = Kd;
-  	p_error = 0.3;
-  	i_error = 0.002;
+  	p_error = 0.1;
+  	i_error = 0.001;
   	d_error = 3.0;
   	update_Kp_flag = true;
   	update_Ki_flag = false;

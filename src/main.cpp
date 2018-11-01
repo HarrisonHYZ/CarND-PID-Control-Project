@@ -41,7 +41,7 @@ int main()
   // TODO: Initialize the pid variable.
   double Kp = 0.2;
   double Kd = 3.0;
-  double Ki = 0.004;
+  double Ki = 0.0;
   // double Kp_speed = 0.0;
   // double Kd_speed = 0.0;
   // double Ki_speed = 0.0;
@@ -84,7 +84,7 @@ int main()
           std::cout<<"diff_cte is: "<<diff_cte<<std::endl;
           std::cout<<"sum_cte is: "<<sum_cte<<std::endl;
 
-          if(pid.TotalError() > 0.2){
+          if(pid.TotalError() > 0.05){
             pid.UpdateError(cte);
           }
           std::cout << "Kp, Ki, Kd: " << pid.Kp << ", " << pid.Ki << ", " << pid.Kd << std::endl;
